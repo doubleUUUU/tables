@@ -21,6 +21,7 @@ const els = {
   addGuestBtn: document.getElementById("addGuestBtn"),
   guestList: document.getElementById("guestList"),
   deleteTableBtn: document.getElementById("deleteTableBtn"),
+  closeDialogBtn: document.getElementById("closeDialogBtn"),
 };
 
 function load() {
@@ -236,6 +237,7 @@ els.addTableBtn.addEventListener("click", addTable);
 els.clearAllBtn.addEventListener("click", clearAll);
 els.addGuestBtn.addEventListener("click", addGuest);
 els.deleteTableBtn.addEventListener("click", deleteTable);
+els.closeDialogBtn.addEventListener("click", () => els.tableDialog.close());
 
 els.guestNameInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
