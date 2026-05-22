@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рассадка гостей</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Рассадка гостей</h1>
+    <div class="header-actions">
+      <button type="button" id="addTableBtn" class="btn btn-primary">+ Добавить стол</button>
+      <button type="button" id="clearAllBtn" class="btn btn-ghost" title="Удалить все столы">Очистить</button>
+    </div>
+  </header>
+
+  <main class="hall">
+    <section class="side side-left" id="sideLeft" aria-label="Левая сторона зала">
+      <p class="side-label">Левая сторона</p>
+      <div class="tables-zone" id="tablesLeft"></div>
+    </section>
+
+    <div class="aisle" aria-hidden="true">
+      <span class="aisle-label">Проход</span>
+    </div>
+
+    <section class="side side-right" id="sideRight" aria-label="Правая сторона зала">
+      <p class="side-label">Правая сторона</p>
+      <div class="tables-zone" id="tablesRight"></div>
+    </section>
+  </main>
+
+  <dialog id="tableDialog" class="dialog">
+    <form method="dialog" class="dialog-form" id="tableForm">
+      <h2 id="dialogTitle">Стол</h2>
+      <p class="dialog-side" id="dialogSide"></p>
+
+      <div class="guest-add">
+        <input type="text" id="guestNameInput" placeholder="Имя гостя" autocomplete="off" required>
+        <label class="checkbox-label">
+          <input type="checkbox" id="guestChildInput">
+          <span>Ребёнок</span>
+        </label>
+        <button type="button" id="addGuestBtn" class="btn btn-primary">Добавить</button>
+      </div>
+
+      <ul class="guest-list" id="guestList"></ul>
+
+      <div class="dialog-actions">
+        <button type="button" id="deleteTableBtn" class="btn btn-danger">Удалить стол</button>
+        <button type="submit" class="btn btn-ghost">Закрыть</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
